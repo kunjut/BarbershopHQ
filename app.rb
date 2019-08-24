@@ -56,11 +56,11 @@ post '/contacts' do
 	@email = params[:email]
 	@message = params[:message]
 
-#	hh = {
-#		:email => @email, 
-#		:message => @message	
-#	}
-#	Contact.create hh 
+	hh = {
+		:email => @email, 
+		:message => @message	
+	}
+	Contact.create hh 
 
-	erb "<h2>Ваше сообщение отправлено</h2><br />#{@email}<br />#{@message}"
+	erb "<h2>Ваше сообщение отправлено</h2>"
 end
