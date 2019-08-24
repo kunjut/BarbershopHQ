@@ -27,11 +27,11 @@ end
 
 post '/visit' do
 	@title = 'Записаться'
-	@username = params[:username]
-	@phonenumber = params[:phonenumber]
-	@datetime = params[:datetime]
-	@master = params[:master]
-	@colorpicker = params[:colorpicker]
+	@name = params[:username]
+	@phone = params[:phonenumber]
+	@datestamp = params[:datetime]
+	@barber = params[:master]
+	@color = params[:colorpicker]
 
 	erb "<h2>Вы записались</h2>"
 end
