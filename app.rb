@@ -29,20 +29,9 @@ get '/visit' do
 end
 
 post '/visit' do
-	@name = params[:username]
-	@phone = params[:phonenumber]
-	@datestamp = params[:datetime]
-	@barber = params[:master]
-	@color = params[:colorpicker]
-
-	hh = {
-		:name => @name, 
-		:phone => @phone,	
-		:datestamp => @datestamp, 
-		:barber => @barber, 
-		:color => @color
-	}
-	Client.create hh 
+	
+	c = Clients.new params[:client]
+	c.save
 
 	erb "<h2>Вы записались</h2>"
 end 
