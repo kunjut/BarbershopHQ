@@ -28,6 +28,11 @@ get '/' do
 	erb :index			
 end
 
+get '/barber/:id' do
+ 
+	erb :barber	
+end
+
 get '/visit' do
 	@title = 'Запись'
 	erb :visit
