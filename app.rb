@@ -22,6 +22,7 @@ end
 before do
 	@barbers = Barber.all
 	@c = Client.new params[:client]
+	@clients = Client.order "created_at DESC"
 end
 
 get '/' do
@@ -33,14 +34,21 @@ get '/barber/:id' do
 	erb :barber	
 end
 
+get '/bookings' do
+	erb :bookings			
+end
+
+get '/client/:id' do
+	@client = Client.find(params[:id])
+	erb :client
+end
+
 get '/visit' do
 	@title = 'Запись'
 	erb :visit
 end
 
 post '/visit' do
-	
-	
 
 	if @c.save
 		erb "<h2>Вы записались</h2>"
