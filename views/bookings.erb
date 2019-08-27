@@ -1,0 +1,12 @@
+<h2>Clients page</h2><br />
+
+<% @clients.each do |client| %>
+    <p>
+    <%= client.id %>
+    <a href="client/<%= client.id %>"><%= client.name %></a> |
+    <%= client.phone %></a> |
+    <%= client.datestamp %></a> |
+    <%= client.barber %></a> |
+    <%= client.color %></a><hr />
+    </p>
+<%end%>
